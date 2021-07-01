@@ -85,7 +85,7 @@ public class Critter1 {
     public void feed(Food food) {
         if (isAlive) {
             System.out.println(name +" eats.");
-            food.applyFood(critter1);
+            food.applyFood(this);
             if (exerciseLevel == 10){
                 System.out.println("You win");
                 die();
