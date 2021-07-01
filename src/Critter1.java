@@ -3,7 +3,7 @@ public class Critter1 {
     private int foodLevel;
     private int tiredness;
 
-    public Critter1() {
+    public Critter1(string: name;) {
         isAlive = true;
         foodLevel = 5;
         tiredness = 0;
