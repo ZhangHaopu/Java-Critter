@@ -12,7 +12,7 @@ public class Critter1 {
         exerciseLevel = 0;
         name = input;
     }
-
+// getter and setters
 
     public int getTiredness(){
         return tiredness;
@@ -26,13 +26,21 @@ public class Critter1 {
     public String getName(){
         return name;
     }
-
+    public void writeTiredness(int tired){
+        tiredness = tired;
+    }
+    public void writeFoodLevel(int food){
+        foodLevel = food;
+    }
+    public void writeEx(int ex){
+        exerciseLevel = ex;
+    }
 
     public boolean isAlive() {
         return isAlive;
     }
 
-    private void die() {
+    public void die() {
         isAlive = false;
     }
     
@@ -52,7 +60,7 @@ public class Critter1 {
 
     }
 
-    public void feed() {
+    /*public void feed() {
         if (isAlive) {
             System.out.println(name +" eats.");
             foodLevel++;
@@ -71,6 +79,26 @@ public class Critter1 {
                 sleep();
             }
         }
-    }
+    } */
+
+
+    public void feed(Food food) {
+        if (isAlive) {
+            System.out.println(name +" eats.");
+            food.applyFood(critter1);
+            if (exerciseLevel == 10){
+                System.out.println("You win");
+                die();
+            }
+            else if (foodLevel > 10) {
+                System.out.println(name+" over ate.");
+                die();
+            }
+            else if (tiredness > 5) {
+                System.out.println(name+" is sleepy from so much food.");
+                sleep();
+            }
+        }
+    } 
 }
 
